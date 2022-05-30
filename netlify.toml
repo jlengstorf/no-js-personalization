@@ -1,0 +1,10 @@
+[build]
+  publish = "public"
+
+[[edge_functions]]
+  path = "/*"
+  function = "update-score"
+
+[[edge_functions]]
+  path = "/"
+  function = "personalize"
