@@ -25,7 +25,9 @@ export default async (_request: Request, context: Context) => {
   console.log({ URL: Deno.env.get('URL') });
   console.log(Object.keys(Deno.env.toObject()));
 
-  const endpoint = new URL(Deno.env.get('URL') || 'http://localhost:8888');
+  const endpoint = new URL(
+    Deno.env.get('URL') || 'https://no-js-personalization.netlify.app/',
+  );
   endpoint.pathname = '/api/products';
 
   const res = await fetch(endpoint.toString());
