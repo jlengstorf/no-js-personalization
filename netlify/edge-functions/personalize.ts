@@ -22,6 +22,9 @@ export default async (_request: Request, context: Context) => {
     return;
   }
 
+  console.log({ URL: Deno.env.get('URL') });
+  console.log(Object.keys(Deno.env.toObject()));
+
   const endpoint = new URL(Deno.env.get('URL') || 'http://localhost:8888');
   endpoint.pathname = '/api/products';
 
@@ -66,8 +69,6 @@ export default async (_request: Request, context: Context) => {
       </div>
     `;
   });
-
-  console.log(sortedMarkup);
 
   return new HTMLRewriter()
     .on('.products', {
