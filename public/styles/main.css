@@ -106,3 +106,24 @@ h2 {
   top: 0;
   width: 100%;
 }
+
+.product-details {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 200px auto;
+  margin-top: 0.75rem;
+}
+
+.product-image {
+  width: 200px;
+}
+
+.product-image img {
+  width: 100%;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}

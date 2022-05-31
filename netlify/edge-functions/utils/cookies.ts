@@ -15,12 +15,15 @@ export function getScoreFromCookie(context: Context): Score {
   return score;
 }
 
-export function setScoreCookie(context: Context, score: Score) {
+export async function setScoreCookie(context: Context, score: Score) {
   const encodedScore = encode(JSON.stringify(score));
 
-  context.cookies.set({
+  await context.cookies.set({
     name: 'score',
     value: encodedScore,
+    path: '/',
+    secure: true,
+    httpOnly: true,
     sameSite: 'Strict',
     expires: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
   });

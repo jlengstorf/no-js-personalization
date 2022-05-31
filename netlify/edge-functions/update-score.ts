@@ -4,19 +4,24 @@ import { getScoreFromCookie, setScoreCookie } from './utils/cookies.ts';
 export default async (request: Request, context: Context) => {
   const url = new URL(request.url);
 
-  if (!['/', '/corgis', '/food'].includes(url.pathname)) {
+  if (!['/corgis', '/food'].some((path) => url.pathname.startsWith(path))) {
     return;
   }
 
   const score = getScoreFromCookie(context);
 
-  if (url.pathname === '/food') {
+  if (url.pathname.startsWith('/food')) {
     score.food += 10;
   }
 
-  if (url.pathname === '/corgis') {
+  if (url.pathname.startsWith('/corgis')) {
     score.corgis += 10;
   }
 
-  setScoreCookie(context, score);
+  console.log({
+    path: url.pathname,
+    score,
+  });
+
+  await setScoreCookie(context, score);
 };

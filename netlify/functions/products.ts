@@ -47,8 +47,8 @@ export const handler: Handler = builder(async () => {
     };
   }
 
-  const { data } = await res.json();
-  const products = data.products as Product[];
+  const { data } = (await res.json()) as { data: { products: Product[] } };
+  const products = data.products;
 
   return {
     statusCode: 200,
