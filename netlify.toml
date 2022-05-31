@@ -1,6 +1,11 @@
 [build]
   publish = "public"
 
+[[redirects]]
+  from = "/api/products"
+  to = "/.netlify/builders/products"
+  status = 200
+
 [[edge_functions]]
   path = "/*"
   function = "update-score"
