@@ -44,13 +44,15 @@ export default async (_request: Request, context: Context) => {
     prioritize = 'corgis';
   }
 
-  if (prioritize === 'none') {
-    return;
-  }
+  const sorted = products.sort((a: Product, b: Product) => {
+    let cat = 0;
+    if (a.category !== b.category) {
+      cat = a.category === prioritize ? -1 : 1;
+    }
 
-  const sorted = products.sort((a: Product) =>
-    a.category === prioritize ? -1 : 1,
-  );
+    return cat === 0 ? a.id - b.id : cat;
+  });
+
   const sortedMarkup = sorted.map((product: Product) => {
     return `
       <div class="product" data-category="${product.category}">
@@ -62,9 +64,7 @@ export default async (_request: Request, context: Context) => {
         <p>
           ${product.description}
         </p>
-        <a href="${
-          product.link
-        }">Shop All ${product.category.toLocaleUpperCase()}</a>
+        <a href="${product.link}">Details</a>
       </div>
     `;
   });

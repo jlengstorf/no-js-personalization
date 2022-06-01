@@ -6,6 +6,16 @@
   to = "/.netlify/builders/products"
   status = 200
 
+[[redirects]]
+  from = "/corgis/*"
+  to = "/product.html"
+  status = 200
+
+[[redirects]]
+  from = "/food/*"
+  to = "/product.html"
+  status = 200
+
 [[edge_functions]]
   path = "/*"
   function = "update-score"
