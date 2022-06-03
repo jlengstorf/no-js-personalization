@@ -74,13 +74,16 @@ h2 {
   width: 100%;
 }
 
-.product a {
+.details-link {
+  margin-top: auto;
+}
+
+.details-link a {
   background: #ccc;
   border-radius: 0.25rem;
   color: #222;
   display: block;
   font-weight: 700;
-  margin-top: auto;
   padding: 0.5rem;
   text-align: center;
   text-decoration: none;
@@ -91,13 +94,13 @@ h2 {
   border-color: #222;
 }
 
-.product a:active,
-.product a:hover {
+.details-link a:active,
+.details-link a:hover {
   background: #222;
   color: #fff;
 }
 
-.product a::after {
+.details-link a::after {
   content: '';
   display: block;
   height: calc(200px + 3.5rem);

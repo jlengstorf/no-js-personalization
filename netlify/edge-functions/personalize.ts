@@ -64,7 +64,9 @@ export default async (_request: Request, context: Context) => {
         <p>
           ${product.description}
         </p>
-        <a href="${product.link}">Details</a>
+        <p class="details-link">
+          <a href="${product.link}">Details</a>
+        </p>
       </div>
     `;
   });
