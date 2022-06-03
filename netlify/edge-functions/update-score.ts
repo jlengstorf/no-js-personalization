@@ -18,10 +18,5 @@ export default async (request: Request, context: Context) => {
     score.corgis += 10;
   }
 
-  console.log({
-    path: url.pathname,
-    score,
-  });
-
   await setScoreCookie(context, score);
 };

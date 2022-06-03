@@ -21,18 +21,18 @@ export const handler: Handler = builder(async () => {
       },
       body: JSON.stringify({
         query: `
-        query AllProducts {
-          products(order_by: {id: asc}) {
-            id
-            name
-            description
-            imageSrc
-            imageAlt
-            category
-            link
+          query AllProducts {
+            products(order_by: {id: asc}) {
+              id
+              name
+              description
+              imageSrc
+              imageAlt
+              category
+              link
+            }
           }
-        }      
-      `,
+        `,
         variables: {},
       }),
     },

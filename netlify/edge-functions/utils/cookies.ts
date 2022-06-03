@@ -8,11 +8,10 @@ type Score = {
 
 export function getScoreFromCookie(context: Context): Score {
   const base64Cookie = context.cookies.get('score');
-  const score = base64Cookie
+
+  return base64Cookie
     ? JSON.parse(new TextDecoder().decode(decode(base64Cookie)))
     : { food: 0, corgis: 0 };
-
-  return score;
 }
 
 export async function setScoreCookie(context: Context, score: Score) {

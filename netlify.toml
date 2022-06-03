@@ -1,6 +1,9 @@
 [build]
   publish = "public"
 
+[functions]
+  node_bundler = "esbuild"
+
 [[redirects]]
   from = "/api/products"
   to = "/.netlify/builders/products"
