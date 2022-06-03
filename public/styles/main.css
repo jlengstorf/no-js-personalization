@@ -42,20 +42,20 @@ main {
   margin-bottom: 5rem;
 }
 
-.products {
-  display: grid;
-  flex: 1rem;
-  gap: 2rem 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  margin-top: 1rem;
-}
-
 h1 {
   font-size: 1.5rem;
 }
 
 h2 {
   font-size: 1.25rem;
+}
+
+.products {
+  display: grid;
+  flex: 1rem;
+  gap: 2rem 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-top: 1rem;
 }
 
 .product {
