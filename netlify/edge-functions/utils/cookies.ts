@@ -1,5 +1,8 @@
-import { Context } from 'netlify:edge';
-import { encode, decode } from 'https://deno.land/std/encoding/base64.ts';
+import type { Context } from 'https://edge.netlify.com/1.0.0/index.ts';
+import {
+  encode,
+  decode,
+} from 'https://deno.land/std@0.141.0/encoding/base64.ts';
 
 type Score = {
   food: number;

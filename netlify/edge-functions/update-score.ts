@@ -1,4 +1,4 @@
-import { Context } from 'netlify:edge';
+import type { Context } from 'https://edge.netlify.com/1.0.0/index.ts';
 import { getScoreFromCookie, setScoreCookie } from './utils/cookies.ts';
 
 export default async (request: Request, context: Context) => {
