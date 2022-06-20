@@ -1,4 +1,4 @@
-[build]
+[build] 
   publish = "public"
 
 [functions]
@@ -26,11 +26,3 @@
 [[edge_functions]]
   path = "/"
   function = "personalize"
-
-[[edge_functions]]
-  path = "/corgis/*"
-  function = "display-product"
-
-[[edge_functions]]
-  path = "/food/*"
-  function = "display-product"

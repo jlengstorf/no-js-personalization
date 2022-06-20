@@ -36,12 +36,12 @@ export default async (_request: Request, context: Context) => {
   const products = await res.json();
 
   let prioritize = 'none';
-  if (score.food > score.corgis) {
-    prioritize = 'food';
-  }
-
   if (score.corgis > score.food) {
     prioritize = 'corgis';
+  }
+
+  if (score.food > score.corgis) {
+    prioritize = 'food';
   }
 
   const sorted = products.sort((a: Product, b: Product) => {
