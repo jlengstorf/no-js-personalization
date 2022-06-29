@@ -1,6 +1,6 @@
 # Personalized UIs with No Client-Side JavaScript
 
-This is an experiment with Netlify Edge Functions to show how we can create adaptive UIs without client-side JavaScript.
+This is an experiment with [Netlify Edge Functions](https://www.netlify.com/blog/announcing-serverless-compute-with-edge-functions/?utm_source=readme&utm_medium=github&utm_campaign=devex-jl) to show how we can create adaptive UIs without client-side JavaScript.
 
 This example uses Edge Functions to set and read a cookie. 
 
