@@ -34,6 +34,8 @@ export default async (request: Request, context: Context) => {
     (product: Product) => product.link === reqUrl.pathname,
   );
 
+  console.log({ product });
+
   return new HTMLRewriter()
     .on('[data-prop]', {
       element(element: Element) {
