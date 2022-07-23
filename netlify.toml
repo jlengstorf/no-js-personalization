@@ -4,6 +4,22 @@
 [functions]
   node_bundler = "esbuild"
 
+[[edge_functions]]
+  path = "/"
+  function = "personalize"
+
+[[edge_functions]]
+  path = "/corgis/*"
+  function = "display-product"
+
+[[edge_functions]]
+  path = "/food/*"
+  function = "display-product"
+
+[[edge_functions]]
+  path = "/*"
+  function = "update-score"
+
 [[redirects]]
   from = "/api/products"
   to = "/.netlify/builders/products"
@@ -18,19 +34,3 @@
   from = "/food/*"
   to = "/product.html"
   status = 200
-
-[[edge_functions]]
-  path = "/*"
-  function = "update-score"
-
-[[edge_functions]]
-  path = "/"
-  function = "personalize"
-
-[[edge_functions]]
-  path = "/corgis/*"
-  function = "display-product"
-
-[[edge_functions]]
-  path = "/food/*"
-  function = "display-product"

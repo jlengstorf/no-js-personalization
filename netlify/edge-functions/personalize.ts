@@ -16,6 +16,8 @@ type Product = {
 };
 
 export default async (_request: Request, context: Context) => {
+  console.log('hello?');
+
   const score = getScoreFromCookie(context);
 
   if (score.food === 0 && score.corgis === 0) {
