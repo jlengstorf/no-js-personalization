@@ -10,6 +10,7 @@ This example uses Edge Functions to set and read a cookie.
 
 Try it out here: https://no-js-personalization.netlify.app/
 
+
 ## Local development
 
 ```sh
