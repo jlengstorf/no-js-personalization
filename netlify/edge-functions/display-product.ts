@@ -22,6 +22,8 @@ export default async (request: Request, context: Context) => {
   );
   endpoint.pathname = '/api/products';
 
+  console.log({ endpoint });
+
   const res = await fetch(endpoint.toString());
 
   if (!res.ok) {
