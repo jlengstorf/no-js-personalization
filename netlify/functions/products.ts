@@ -12,6 +12,7 @@ type Product = {
 };
 
 export const handler: Handler = builder(async () => {
+  console.log('/api/products');
   const res = await fetch(
     'https://zero-js-personalized.hasura.app/v1/graphql',
     {
