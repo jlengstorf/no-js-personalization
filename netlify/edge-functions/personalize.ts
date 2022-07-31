@@ -32,6 +32,8 @@ export default async (_request: Request, context: Context) => {
   const res = await fetch(endpoint.toString());
 
   if (!res.ok) {
+    console.log('error loading products');
+    console.log(res);
     return;
   }
 
