@@ -16,8 +16,6 @@ type Product = {
 };
 
 export default async (_request: Request, context: Context) => {
-  console.log('hello?');
-
   const score = getScoreFromCookie(context);
 
   if (score.food === 0 && score.corgis === 0) {
@@ -28,6 +26,8 @@ export default async (_request: Request, context: Context) => {
     Deno.env.get('URL') || 'https://no-js-personalization.netlify.app/',
   );
   endpoint.pathname = '/api/products';
+
+  console.log({ endpoint });
 
   const res = await fetch(endpoint.toString());
 
