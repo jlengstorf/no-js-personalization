@@ -27,7 +27,7 @@ export default async (_request: Request, context: Context) => {
   );
   endpoint.pathname = '/api/products';
 
-  console.log({ endpoint });
+  console.log({ endpoint: endpoint.toString() });
 
   const res = await fetch(endpoint.toString());
 
@@ -36,6 +36,8 @@ export default async (_request: Request, context: Context) => {
   }
 
   const products = await res.json();
+
+  console.log({ products });
 
   let prioritize = 'none';
   if (score.food > score.corgis) {
