@@ -17,11 +17,7 @@ type Product = {
 export default async (request: Request, context: Context) => {
   const reqUrl = new URL(request.url);
 
-  const endpoint = new URL(
-    Deno.env.get('URL') || 'https://no-js-personalization.netlify.app/',
-  );
-  endpoint.pathname = '/api/products';
-
+  const endpoint = new URL("/api/products", request.url)
   console.log({ endpoint });
 
   const res = await fetch(endpoint.toString());
