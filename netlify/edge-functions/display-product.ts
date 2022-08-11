@@ -17,10 +17,7 @@ type Product = {
 export default async (request: Request, context: Context) => {
   const reqUrl = new URL(request.url);
 
-  const endpoint = new URL("/api/products", request.url)
-  console.log({ endpoint });
-
-  const res = await fetch(endpoint.toString());
+  const res = await context.rewrite("/api/products");
 
   if (!res.ok) {
     return;
