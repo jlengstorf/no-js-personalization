@@ -22,14 +22,7 @@ export default async (_request: Request, context: Context) => {
     return;
   }
 
-  const endpoint = new URL(
-    Deno.env.get('URL') || 'https://no-js-personalization.netlify.app/',
-  );
-  endpoint.pathname = '/api/products';
-
-  console.log({ endpoint: endpoint.toString() });
-
-  const res = await fetch(endpoint.toString());
+  const res = await context.rewrite('/api/products');
 
   if (!res.ok) {
     console.log('error loading products');
